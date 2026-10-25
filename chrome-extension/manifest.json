@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Google Meet MoM Speaker Tracker",
+  "version": "1.0",
+  "description": "Captures live speaker names and closed captions from Google Meet to enrich Gemini MoM generation.",
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "Google Meet MoM Caption Logger"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://meet.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

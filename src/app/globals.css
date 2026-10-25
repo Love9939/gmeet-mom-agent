@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+:root {
+  --canvas: #ffffff;
+  --surface-soft: #fbfbf9;
+  --surface-card: #f6f6f3;
+  --surface-elevated: #ffffff;
+  --surface-dark: #262622;
+  --secondary-bg: #e5e5e0;
+  --secondary-pressed: #c8c8c1;
+  --hairline: #dadad3;
+  --hairline-soft: #e5e5e0;
+  --primary: #e60023;
+  --primary-pressed: #cc001f;
+  --ink: #000000;
+  --ink-soft: #211922;
+  --body: #33332e;
+  --charcoal: #262622;
+  --mute: #62625b;
+  --ash: #91918c;
+  --stone: #c8c8c1;
+  --success-deep: #103c25;
+  --success-pale: #c7f0da;
+  --error: #9e0a0a;
+  --error-deep: #cc001f;
+  --focus-outer: #435ee5;
+  --focus-inner: #ffffff;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface-soft: var(--surface-soft);
+  --color-surface-card: var(--surface-card);
+  --color-primary: var(--primary);
+  --color-primary-pressed: var(--primary-pressed);
+  --color-ink: var(--ink);
+  --color-body: var(--body);
+  --color-mute: var(--mute);
+  --color-hairline: var(--hairline);
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: var(--surface-soft);
+  color: var(--body);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Pinterest warm-cream scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fbfbf9;
+}
+::-webkit-scrollbar-thumb {
+  background: #dadad3;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c8c8c1;
+}
+
+/* Pinterest Design Cards */
+.pin-card {
+  background-color: var(--surface-card);
+  border-radius: 16px;
+  border: 1px solid var(--hairline-soft);
+}
+
+.pin-card-white {
+  background-color: var(--canvas);
+  border-radius: 16px;
+  border: 1px solid var(--hairline);
+}
+
+.pin-modal {
+  background-color: var(--canvas);
+  border-radius: 32px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Button variants based on DESIGN.md */
+.btn-primary-red {
+  background-color: var(--primary);
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 16px;
+  transition: background-color 0.15s ease-in-out;
+}
+.btn-primary-red:hover {
+  background-color: var(--primary-pressed);
+}
+
+.btn-secondary-cream {
+  background-color: var(--secondary-bg);
+  color: var(--ink);
+  font-weight: 700;
+  border-radius: 16px;
+  transition: background-color 0.15s ease-in-out;
+}
+.btn-secondary-cream:hover {
+  background-color: var(--secondary-pressed);
+}
+
+.btn-pill-filter {
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: all 0.15s ease-in-out;
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Hide Next.js Development Indicator & Floating Icons */
+nextjs-portal,
+[data-nextjs-toast],
+[data-nextjs-dialog-overlay],
+[data-next-indicator],
+[data-nextjs-dev-indicator],
+#nextjs-dev-indicator {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
